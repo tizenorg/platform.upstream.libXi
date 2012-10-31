@@ -1,7 +1,3 @@
-#
-# Please submit bugfixes or comments via http://bugs.tizen.org/
-#
-
 Name:           libXi
 Version:        1.6.1
 Release:        1
@@ -42,8 +38,7 @@ X.Org X11 libXi development package
 %setup -q
 
 %build
-autoreconf -v --install || exit 1
-%reconfigure --disable-specs \
+%configure --disable-specs \
 	       --disable-static
 
 make %{?_smp_mflags}
