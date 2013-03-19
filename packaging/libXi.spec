@@ -4,7 +4,7 @@ Release:        1
 License:        MIT
 Summary:        X.org libXi Client library for XInput.
 Url:            http://www.x.org
-Group:          Xinerama protocol library
+Group:          Graphics/X Window System
 
 Source:         %{name}-%{version}.tar.bz2
 
