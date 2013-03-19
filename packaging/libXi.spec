@@ -2,9 +2,9 @@ Name:           libXi
 Version:        1.6.1
 Release:        1
 License:        MIT
-Summary:        X
+Summary:        X.org libXi Client library for XInput.
 Url:            http://www.x.org
-Group:          System Environment/Libraries
+Group:          Xinerama protocol library
 
 Source:         %{name}-%{version}.tar.bz2
 
@@ -23,7 +23,7 @@ Requires:       libX11 >= 1.4.99.1
 X.Org X11 libXi runtime library
 
 %package devel
-Summary:        X
+Summary:        X.org libXi Client library for XInput.
 Group:          Development/Libraries
 Requires:       %{name} = %{version}
 Requires:       pkgconfig
@@ -55,7 +55,7 @@ make %{?_smp_mflags}
 
 %files
 %defattr(-,root,root,-)
-%doc COPYING
+%license COPYING
 %{_libdir}/libXi.so.6
 %{_libdir}/libXi.so.6.1.0
 
