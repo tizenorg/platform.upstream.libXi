@@ -7,6 +7,7 @@ Url:            http://www.x.org
 Group:          Graphics/X Window System
 
 Source:         %{name}-%{version}.tar.bz2
+Source1001: 	libXi.manifest
 
 BuildRequires:  autoconf
 BuildRequires:  automake
@@ -36,6 +37,7 @@ X.Org X11 libXi development package
 
 %prep
 %setup -q
+cp %{SOURCE1001} .
 
 %build
 %configure --disable-specs \
@@ -54,12 +56,14 @@ make %{?_smp_mflags}
 %postun -p /sbin/ldconfig
 
 %files
+%manifest %{name}.manifest
 %defattr(-,root,root,-)
 %license COPYING
 %{_libdir}/libXi.so.6
 %{_libdir}/libXi.so.6.1.0
 
 %files devel
+%manifest %{name}.manifest
 %defattr(-,root,root,-)
 %{_includedir}/X11/extensions/XInput.h
 %{_includedir}/X11/extensions/XInput2.h
