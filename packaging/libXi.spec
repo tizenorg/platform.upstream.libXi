@@ -1,3 +1,5 @@
+%bcond_with x
+
 Name:           libXi
 Version:        1.6.1
 Release:        1
@@ -19,6 +21,10 @@ BuildRequires:  pkgconfig(xorg-macros)
 BuildRequires:  pkgconfig(xproto)
 
 Requires:       libX11 >= 1.4.99.1
+
+%if !%{with x}
+ExclusiveArch:
+%endif
 
 %description
 X.Org X11 libXi runtime library
