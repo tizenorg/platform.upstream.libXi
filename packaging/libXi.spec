@@ -1,7 +1,7 @@
 %bcond_with x
 
 Name:           libXi
-Version:        1.6.1
+Version:        1.7.2
 Release:        1
 License:        MIT
 Summary:        X.org libXi Client library for XInput.
@@ -19,6 +19,7 @@ BuildRequires:  pkgconfig(x11) >= 1.4.99.1
 BuildRequires:  pkgconfig(xext)
 BuildRequires:  pkgconfig(xorg-macros)
 BuildRequires:  pkgconfig(xproto)
+BuildRequires:  pkgconfig(xfixes)
 
 Requires:       libX11 >= 1.4.99.1
 
@@ -46,7 +47,7 @@ X.Org X11 libXi development package
 cp %{SOURCE1001} .
 
 %build
-%configure --disable-specs \
+%autogen --disable-specs \
 	       --disable-static
 
 make %{?_smp_mflags}
